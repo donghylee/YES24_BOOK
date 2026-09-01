@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+body{
+    font-family: 'Malgun Gothic', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+header{
+    width: 100%;
+    height: 200px;
+    margin: 0  auto;
+    justify-content: space-between;
+    /* background-color: gold; */
+}
+.container{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+}
+.topinner {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    /* border: 3px solid purple; */
+    height: 100%;
+    /* align-content: center;
+    align-self: center; */
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.top-banner{
+    width: px;
+    height: 50px;
+    background : linear-gradient(130deg, #fceda1 50%, #ffd900 50%);
+    /* flex-wrap: wrap; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.top-banner .left{   
+    align-content: end;   
+    height: 100%;
+}
+.top-banner .right{   
+    height: 100%;
+}
+.top-banner .inner{
+    gap: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.top-banner .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.gnb{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: #0080ff;
+    color: #fff;
+}
+.gnb .inner{
+    width: 1200px;
+    align-content: center;
+    justify-content: space-between;
+}
+.gnb ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.gnb ul li a {
+    font-weight: bold;
+    color: white; 
+}
+.gnb-left {font-size: 14px; letter-spacing: -1px;}
+.gnb-right {font-size: 11px; font-weight: normal;  }
+
+.header-main {
+    height: 110px;
+    background-color: #fff;
+}
+.header-main .container{
+    width: 1200px;
+    justify-content: space-between;
+}
+.logo{
+    width: 200px;
+    height: 103px;
+    /* background-color: red; */
+    margin-left: 70px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    width: 516px;
+    height: 48px;
+    border: 3px solid #0080ff;
+    padding: 0 5px 0 10px;
+}
+.search-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.search-box button{
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+.promo{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.promo-img{
+    width: 160px;
+    height: 100px;
+    /* display: flex; */
+    position: relative;
+    z-index: 1;
+}
+.promo-controls button{
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 5px;
+    font-size: 10px;
+    position: absolute;
+    /* top:10px; */
+    right: 10px;
+    bottom: 5px;
+    z-index: 10;
+    display: flex;
+    margin: 0 auto;
+}
+.promo-controls button:first-child{
+    text-align: center;
+    width: 20px;
+    height: 23px;
+    left: 90px;   /* 왼쪽 버튼 */
+}
+
+.promo-controls button:last-child{
+    text-align: center;
+    width: 20px;
+    right: 10px;  /* 오른쪽 버튼 */
+}
+.category-bar {
+        height: 50px;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #0080ff;
+}
+.category-bar .inner {
+        justify-content: space-between; 
+}
+    
+.btn-quick-find {
+        background-color: #0080ff;
+        color: #fff;
+        height: 100%;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 13px;
+        margin-right: 20px;
+}
+.btn-quick-find a{
+    color: #fff;
+    font-weight: bold;
+}
+.category-links-blue {
+    font-size: 12px;
+    display: flex;
+    gap: 15px;
+    color: #0080ff;
+    font-weight: bold; 
+}
+.category-links-blue a{
+    color: #0080ff;
+    font-weight: bold;
+}    
+.divider { color: #ddd; margin: 0 15px; }
+    
+.category-links-black {
+    font-size: 12px;
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+} 
+.category-links-gray {
+    font-size: 12px;
+    display: flex;
+    gap: 10px;   
+    color: #888;
+    margin-left: auto; 
+}
+
+
+/* 풋터 구간 */
+
+footer{
+    width: ;
+    height: 307px;
+    margin: 0 auto;
+    background-color: #dfdfdf;
+}
+.outside{
+    height: 42px;
+    margin: 0 auto;
+    border: 1px solid #bebebe;
+    display: flex;
+    align-items: center;  
+}
+.fcontainer{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    border: 3px solid red;
+    display: flex;
+}
+.bottom{
+    width: 1200px;
+    height: 42px;
+    /* align-self: flex-start; */
+    /* background-color: #dfdfdf; */
+    display: flex;
+    justify-content: space-between;
+    /* border-top: 10px solid #000;
+    border-bottom: 10px solid #000; */
+}
+.bottom .list{
+    display: flex;
+    height: 42px;
+    margin-top: 10px;
+    align-self: center;
+    gap: 15px;
+}
+.bottom .rightbox{
+    display: flex;
+    width: 231px;
+    height: 42px;
+    background-color: red;
+    justify-content: space-between;
+    align-items: center;
+}
+.bicon {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.bicon1 {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.bicon2 {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.bicon3 {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.label-btn {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #f5f5f5; /* 연한 회색 배경 */
+  border: 1px solid #dcdcdc; /* 회색 테두리 */
+  border-radius: 2px;
+  font-size: 11px;
+  color: #555555;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.arrow-icon {
+  font-size: 10px;
+  color: #888888;
+  padding-left: 10px;
+  border-left: 1px solid #e0e0e0; /* 화살표 왼쪽 세로선 */
+}
+.s-list {
+  display: none; 
+  position: absolute;
+  bottom: initial; /* 버튼 위로 띄우고 싶다면 top 대신 bottom 사용 */
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-top: none; /* 버튼 테두리와 겹치지 않게 위쪽 테두리 제거 */
+  box-sizing: border-box;
+  z-index: 10;
+}
+li a{
+    font-size: 12px;
+}
+.list .divider { color: #bebebe; margin: 0 -10px; }

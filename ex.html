@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ec.css">
+</head>
+<body>
+    <div class="family-site">
+  <!-- 클릭하는 버튼 영역 -->
+  <button type="button" class="label-btn" onclick="toggleDropdown()">
+    <span>가족회사 소개</span>
+    <span class="arrow-icon">▼</span>
+  </button>
+  
+  <!-- 아래로 펼쳐지는 리스트 영역 -->
+  <ul class="site-list">
+    <li><a href="#" target="_blank">한세예스24홀딩스</a></li>
+    <li><a href="#" target="_blank">한세실업</a></li>
+    <li><a href="#" target="_blank">한세드림</a></li>
+    <li><a href="#" target="_blank">컬리수</a></li>
+    <li><a href="#" target="_blank">STYLE24</a></li>
+    <li><a href="#" target="_blank">동아출판</a></li>
+  </ul>
+</div>
+
+<script>
+function toggleDropdown() {
+  const container = document.querySelector('.family-site');
+  // active 클래스를 넣었다 뺐다(토글) 하면서 메뉴를 열고 닫습니다.
+  container.classList.toggle('active');
+}
+
+// 메뉴 바깥 영역을 클릭하면 드롭다운이 자동으로 닫히는 기능
+window.addEventListener('click', function(e) {
+  const container = document.querySelector('.family-site');
+  if (!container.contains(e.target)) {
+    container.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

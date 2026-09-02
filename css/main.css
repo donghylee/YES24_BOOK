@@ -246,25 +246,23 @@
     /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #dcdcdc;
     justify-content: space-between;
     margin: 0 auto;
 }
 .s-left .s-left-top .st1{
     width: 241px;
     height: 49px;
-    /* background-color: red; */
     margin-left: 10px;
     display: flex;
     align-items: center;
-    /* justify-content: space-around;   */
-    font-weight: bold;  
+    font-weight: bold; 
+    position: relative; 
 }
 .s-left .s-left-top .st2{
-    width: 241px;
+    width: 240px;
     height: 154px;
     background-color: green;
-    /* border: 1px solid #dcdcdc; */
+    border-right: 1px solid #dcdcdc;
     display: flex;
     margin: 0 auto;
     /* position: relative; */
@@ -293,10 +291,11 @@
     height: 90%;
     object-fit: cover;
 }
-.swiper-pagination {
+.st1 .swiper-pagination {
+    position: absolute;
     left: auto;
-    top: 725px;
-    right: 400px;
+    top: 10px;
+    right: -65px;
 }
 
 /* .st .swiper-button-next{
@@ -312,7 +311,7 @@
 }
 
 .st3 .swiper {
-    width: 100%;
+    width: 90%;
     height: 100%;
     /* display: flex;
     align-self: center; */
@@ -321,13 +320,12 @@
 .st3 .swiper-slide {
     text-align: left;
     top: -10px;
-    left: 10px;
+    left: 5px;
+    right: 50px;
     font-size: 13px;
     background: #ffffff;
     display: flex;
     font-weight: bold;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .st3 .swiper-slide img {
@@ -339,17 +337,18 @@
 
 
 .s-left .s-left-bottom {
+    margin: 0 auto;
     width: 241px;
     height: 124px;
     border-top: 1px solid #dcdcdc;
-    border-bottom: 1px solid #dcdcdc;
+    /* border-bottom: 1px solid #dcdcdc; */
     /* background-color: olive; */
 }
 
 .s-middle{
     width: 724px;
     height: 391px;
-    background-color: yellow;
+    /* background-color: yellow; */
 
 }
 

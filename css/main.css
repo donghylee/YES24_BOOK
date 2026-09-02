@@ -74,13 +74,13 @@
 
 .menu-list {
     width: 101px;
-    height: ;
+    /* height: ; */
     list-style: none;
     margin: 0;
     padding: 0;
   }
 .yes {
-    padding: 9px 17.7px;
+    padding: 12px 17.7px;
     font-size: 14px;
     background-color: #007bff;
     color: #ffffff;
@@ -181,7 +181,7 @@
     display: flex;
     justify-content: end;
     height: 100%;
-    width: 1099px;
+    width: 1080px;
 }
 .mySwiper2 .swiper-wrapper{
   width: 1099px;
@@ -191,7 +191,7 @@
 .mySwiper {
     height: 15%;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 12px 0;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -214,17 +214,9 @@
 .swiper-slide img {
     display: block;
     width: 1099px;
-    height: 426px;
+    height: 424px;
     object-fit: cover;
 }
-
-/* 첫번째 섹션 */
-/* .first{
-    width: 1210px;
-    height: 391px;
-    margin: 20px auto;
-    background-color: skyblue;
-} */
 
 /* 두번째 섹션 */
 .second{
@@ -303,11 +295,6 @@
     z-index: 1;
 }
 
-/* .st .swiper-button-next{
-    width: 10px;
-    height: 10px;
-    background-color: #333333;
-} */
 /* //////////////////////////////////// */
 .s-left .s-left-top .st3{
     width: 241px;
@@ -349,12 +336,134 @@
     /* border-bottom: 1px solid #dcdcdc; */
     /* background-color: olive; */
 }
-
+/*  */
 .s-middle{
     width: 724px;
     height: 391px;
     /* background-color: yellow; */
+    display: flex;
+    position: relative;
+}
+.s-middle .s-m1{
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    z-index: 10;
+    left: 295px
+}
+.s-middle .middle-t{
+    width: 685px;
+    height: 327px;
+    /* background-color: Red; */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.s-middle .swiper-pagination{
+    position: absolute;
+    width: 85%;
+    height: 100px;
+    left: auto;
+    right: 0px;
+    bottom: -50px;
+    justify-content: right;
+    display: flex;  
+}
+.s-middle .swiper-pagination img{
+    width: 90px;
+    height: 100%;
+    border-radius: 0;
+    margin-right: 50px;
+    border: 5px solid transparent;
+}
+.s-middle .swiper-pagination .swiper-pagination-bullet-active img{
+    border: 5px solid #007bff;
+}
 
+
+/* ///////////////////////////// */
+.s-middle .middle-t .swiper {
+    /* display: flex;
+    justify-content: space-between; */
+    width: 100%;
+    height: 100%;
+}
+
+.s-middle .middle-t .swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    background-position: center;
+    background-size: cover;
+}
+
+.s-middle .middle-t .swiper-slide img {
+    display: block;
+    width: 224px;
+    height: 322px;
+    object-fit: cover;
+}
+/* ////////////////////////// */
+.s-middle .middle-t .m-t-img{
+    width: 224px;
+    height: 322px;
+    /* background-color: blue; */
+    margin: 0 auto;
+}
+.s-middle .middle-t .m-t-text{
+    width: 388px;
+    height: 262px;
+    /* background-color: wheat; */
+    flex-wrap: wrap;
+    text-align: left;
+
+
+    
+}
+.s-middle .middle-t .m-t-text1{
+    width: 388px;
+    height: 32px;
+    /* background-color: aqua;     */
+}
+.s-middle .middle-t .m-t-text2{
+    font-weight: bold;
+    width: 388px;
+    height: 32px;
+    color: #6699CC
+}
+.s-middle .middle-t .m-t-text2:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.s-middle .middle-t .m-t-text3{   
+    color: #999999;
+    font-size: 16px;
+    width: 388px;
+    height: 148px;
+    overflow: hidden; /* 있어야 가려짐 */
+    width: 100%; /* 보이고싶은 만큼의 크기 */
+    /* background-color : greenyellow;  */
+    text-overflow: ellipsis; /* 글자가 넘치는 경우 ... 처리 */
+}
+
+.s-middle .middle-t .m-t-text5{
+    width: 388px;
+    height: 32px;
+    color: #999999;
+    font-size: 14px;
+    align-content: center;
+}
+.s-middle .middle-t .m-t-text6{
+    font-size: 13px;
+    width: 388px;
+    height: 32px;
+    align-self: center;
+}
+.s-middle .middle-t .price-num {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
 }
 
 .s-right{
@@ -366,12 +475,17 @@
 /* 세번째 섹션 */
 /* 외곽 배너 섹션 구간 */
 .section3{
-    width: ;
+    width: 100%;
     height: 199px;
     margin: 0 auto;
     display: flex;
-    justify-self: center;
-    background-color: D9E697;
+    justify-content: center;
+    background-color: #D9E697;
+}
+.section3 .s3{
+    width: 100%;
+    height: 100%;
+    align-content: center;
 }
 
 /* 네번째 섹션 */

@@ -73,16 +73,20 @@
   }
 
 .menu-list {
+    width: 101px;
+    height: ;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 .yes {
-    padding: 9px 13.3px;
+    padding: 9px 17.7px;
     font-size: 14px;
     background-color: #007bff;
     color: #ffffff;
     font-weight: bold;
+    width: 101px;
+    margin: 0;
 }
 
 .yes:hover {
@@ -115,7 +119,7 @@
     display: none;
     position: absolute; 
     top: 0%; 
-    left: 101px; 
+    left: 100px; 
     width: 200px; 
     background-color: #f9f9f9;
     border: 1px solid #dcdcdc;
@@ -296,6 +300,7 @@
     left: auto;
     top: 10px;
     right: -65px;
+    z-index: 1;
 }
 
 /* .st .swiper-button-next{

@@ -217,34 +217,49 @@ header{
 /* 풋터 구간 */
 
 footer{
-    width: ;
+    width: 100%;
     height: 307px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    /* display: flex; */
     background-color: #dfdfdf;
+    /* justify-content: center; */
+}
+.footer-inner {
+    width: 1200px;     
+    max-width: 100%;   
+    margin: 0 auto;    
+    height: 100%;
 }
 .outside{
+    width: 100%;
     height: 42px;
     margin: 0 auto;
-    border: 1px solid #bebebe;
+    border-top: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
     display: flex;
     align-items: center;  
+    justify-content: center;
 }
+.section3{
+    width: 100%;
+    height: 199px;
+    /* margin: 0 auto; */
+    display: flex;
+    background-color: #D9E697;
+    justify-content: center;
+}
+
 .fcontainer{
     width: 1200px;
     height: 100%;
-    margin: 0 auto;
-    border: 3px solid red;
+    margin: 0 auto;   
     display: flex;
 }
 .bottom{
     width: 1200px;
     height: 42px;
-    /* align-self: flex-start; */
-    /* background-color: #dfdfdf; */
     display: flex;
     justify-content: space-between;
-    /* border-top: 10px solid #000;
-    border-bottom: 10px solid #000; */
 }
 .bottom .list{
     display: flex;
@@ -257,39 +272,58 @@ footer{
     display: flex;
     width: 231px;
     height: 42px;
-    background-color: red;
+    
     justify-content: space-between;
     align-items: center;
 }
-.bicon {
-    width: 24px;
-    height: 24px;
-    background-color: blue;
-    border-radius: 50%;
+.iconbox{
+    width: 110px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    background-color: #333;
 }
-.bicon1 {
-    width: 24px;
-    height: 24px;
-    background-color: blue;
-    border-radius: 50%;
+.iconbox img {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    z-index: 5;         
 }
-.bicon2 {
-    width: 24px;
-    height: 24px;
-    background-color: blue;
-    border-radius: 50%;
-}
+
+.bicon,
+.bicon1,
+.bicon2,
 .bicon3 {
     width: 24px;
     height: 24px;
-    background-color: blue;
     border-radius: 50%;
+    position: absolute;
+    top: 0px;       
+    z-index: 6;      
 }
+
+.bicon  { left: 0px; }
+.bicon1 { left: 28px; }
+.bicon2 { left: 56px; }
+.bicon3 { left: 84px; }
+
+.bicon a,
+.bicon1 a,
+.bicon2 a,
+.bicon3 a {
+    display: block; 
+    width: 100%;
+    height: 100%;
+}
+
 .label-btn {
   width: 100%;
-  padding: 10px 12px;
-  background-color: #f5f5f5; /* 연한 회색 배경 */
-  border: 1px solid #dcdcdc; /* 회색 테두리 */
+  padding: 7px 12px;
+  background-color: #f5f5f5; 
+  border: 1px solid #dcdcdc; 
   border-radius: 2px;
   font-size: 11px;
   color: #555555;
@@ -300,12 +334,12 @@ footer{
   font-size: 10px;
   color: #888888;
   padding-left: 10px;
-  border-left: 1px solid #e0e0e0; /* 화살표 왼쪽 세로선 */
+  border-left: 1px solid #e0e0e0;
 }
 .s-list {
   display: none; 
   position: absolute;
-  bottom: initial; /* 버튼 위로 띄우고 싶다면 top 대신 bottom 사용 */
+  bottom: initial; 
   left: 0;
   width: 100%;
   margin: 0;
@@ -313,11 +347,126 @@ footer{
   list-style: none;
   background-color: #ffffff;
   border: 1px solid #dcdcdc;
-  border-top: none; /* 버튼 테두리와 겹치지 않게 위쪽 테두리 제거 */
+  border-top: none;
   box-sizing: border-box;
   z-index: 10;
+}
+.f-site {
+  position: relative;
+}
+
+.s-list.active {
+  display: block; 
 }
 li a{
     font-size: 12px;
 }
 .list .divider { color: #bebebe; margin: 0 -10px; }
+
+.footer-bo{
+    width: 1209px;
+    height: 259px;   
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.footer-bo .left-group{
+    display: flex;
+}
+.footer-bo .logo-bottom{
+    width: 141px;
+    height: 74px;
+    background-color: blue;
+    align-self: center;
+}
+
+.footer-bo .bottom-text{
+    width: 446px;
+    height: 110px;
+    justify-content: start;
+    align-self: center;
+    line-height: 1;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.footer-bo .bottom-right{
+    width: 294px;
+    height: 93px;
+    /* background-color: green; */
+    align-self: center;
+    line-height: 1.5;
+}
+
+.footer-bo .bottom-img{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 1209px;
+    height: 88px;
+}
+.footer-bo .bottom-img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.bop{
+    font-weight: bold;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+.bospan{
+    font-size: 11px;
+    color: #a1a1a1;
+}
+.bospan a {
+    text-decoration: none; 
+    color: #9b9b9b;
+}
+.bospan a:hover {
+    text-decoration: underline;
+}
+
+.bottom-right p{
+    font-size: 12px;
+    /* color: #9b9b9b; */
+}
+.bottom-right .brs{
+    font-weight: bold;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+.bottom-right .brp{
+    margin-left: 5px;
+}
+.brp strong {
+    font-size: 12px;
+    color: #000000;
+}
+.brp a {
+    text-decoration: none; 
+    color: #9b9b9b;
+}
+.brp a:hover {
+    text-decoration: underline;
+}
+.bottom-right .br-btns {
+    display: flex;
+    gap: 6px;            
+    margin-top: 10px;    
+}
+
+.bottom-right .br-btn {
+    flex: 1;               
+    padding: 3px 0;
+    font-size: 11px;
+    color: #555555;
+    background-color: #eeeeee;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    text-indent: 8px;
+}

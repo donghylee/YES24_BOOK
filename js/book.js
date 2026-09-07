@@ -53,6 +53,7 @@ async function bookData() {
             // 첫번째 섹션 두번째 스와이프
 
             var swiper3 = new Swiper('.mySwiper3', {
+                loop: true,
                 spaceBetween: 30,
                 effect: 'fade',
                 navigation: {

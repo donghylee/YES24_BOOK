@@ -11,10 +11,12 @@ var swiper = new Swiper('.mySwiper', {
 
 // 두번째 섹션 왼쪽 스와이프
 var textSwiper = new Swiper('.mySwiper1Text',{
+  loop: true,
   allowTouchMove: false,
 });
 
 var swiper1 = new Swiper('.mySwiper1', {
+  loop: true,
   pagination: {
     el: '.s-left .swiper-pagination',
     type: 'fraction',
@@ -47,7 +49,6 @@ var swiper2 = new Swiper('.mySwiper2', {
 
 // -----------------------------------------------------------------
 function toggleDropdown() {
-  // 버튼 바로 다음 형제 요소(ul.s-list)를 찾아서 active 클래스 토글
   const list = event.currentTarget.nextElementSibling;
   list.classList.toggle('active');
 }

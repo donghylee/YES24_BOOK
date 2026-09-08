@@ -2,7 +2,7 @@ async function fetchBooks(query) {
     const params = new URLSearchParams({
         target: "title",
         query,
-        size: 20   // 4페이지 x 4권 = 16권
+        size: 20
     });
     const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
@@ -15,9 +15,18 @@ async function fetchBooks(query) {
     return response.json();
 }
 
+// 섹션별 swiper 클래스, 페이지네이션 셀렉터를 매핑
+const sectionConfig = {
+    'fo-left-m':  { swiperClass: 'mySwiper4', paginationSelector: '.fo-left-t .swiper-pagination' },
+    'top-left-m': { swiperClass: 'mySwiper5', paginationSelector: '.top-left-t .swiper-pagination' }
+};
+
 async function bookData() {
     try {
-        const queries = [{ query: "정원", sectionClass: "fo-left-m" }];
+        const queries = [
+            { query: "정원", sectionClass: "fo-left-m" },
+            { query: "요리", sectionClass: "top-left-m" }   // 두 번째 섹션용 검색어는 원하는 대로 변경
+        ];
 
         for (const { query, sectionClass } of queries) {
             const data = await fetchBooks(query);
@@ -29,15 +38,21 @@ async function bookData() {
             const pageCount = Math.ceil(books.length / perPage);
             let slidesHtml = '';
 
+            const config = sectionConfig[sectionClass];
+            const imgRowClass = sectionClass === 'top-left-m' ? 'top-img-row' : 'fo-img-row';
+            const textRowClass = sectionClass === 'top-left-m' ? 'top-text-row' : 'fo-text-row';
+            const imgItemClass = sectionClass === 'top-left-m' ? 'top-left-m-img' : 'fo-left-m-img';
+            const textItemClass = sectionClass === 'top-left-m' ? 'top-left-m-text' : 'fo-left-m-text';
+
             for (let p = 0; p < pageCount; p++) {
                 const pageBooks = books.slice(p * perPage, p * perPage + perPage);
 
                 const imgsHtml = pageBooks.map(doc => `
-                    <div class="fo-left-m-img"><img src="${doc.thumbnail}"></div>
+                    <div class="${imgItemClass}"><img src="${doc.thumbnail}"></div>
                 `).join('');
 
                 const textsHtml = pageBooks.map(doc => `
-                    <div class="fo-left-m-text">
+                    <div class="${textItemClass}">
                         <div class="m-t-text1">${doc.title}</div>
                         <div class="m-t-text5">${doc.author} 저 | ${doc.publisher}</div>
                         <div class="m-t-text6">${Math.round(doc.price)}원</div>
@@ -46,28 +61,27 @@ async function bookData() {
 
                 slidesHtml += `
                     <div class="swiper-slide">
-                        <div class="fo-img-row">${imgsHtml}</div>
-                        <div class="fo-text-row">${textsHtml}</div>
+                        <div class="${imgRowClass}">${imgsHtml}</div>
+                        <div class="${textRowClass}">${textsHtml}</div>
                     </div>
                 `;
             }
 
-            wrapper.innerHTML = slidesHtml; // 슬라이드 4개 채우기
+            wrapper.innerHTML = slidesHtml;
 
-            var swiper3 = new Swiper('.mySwiper4', {
-                loop: true, 
+            new Swiper(`.${config.swiperClass}`, {
+                loop: true,
                 spaceBetween: 30,
                 effect: 'fade',
                 navigation: {
-                    nextEl: '.fo-left-m .swiper-button-next',
-                    prevEl: '.fo-left-m .swiper-button-prev',
+                    nextEl: `.${sectionClass} .swiper-button-next`,
+                    prevEl: `.${sectionClass} .swiper-button-prev`,
                 },
                 pagination: {
-                    el: '.fo-left-t .swiper-pagination',
+                    el: config.paginationSelector,
                     type: 'fraction',
                     clickable: true,
                     renderBullet: function (index, className) {
-                        // 각 bullet은 "슬라이드(페이지)" 단위이므로, 그 페이지 첫 번째 책 썸네일로 표시
                         const thumb = books[index * perPage]?.thumbnail || '';
                         return `<img class="${className}" alt="bookimg" src="${thumb}">`;
                     },

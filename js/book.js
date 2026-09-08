@@ -76,3 +76,75 @@ async function bookData() {
 }
 
 bookData();
+
+// /////////////////////////////////////////////////////////////////////////////
+
+
+
+async function fetchBooks(query) {
+    const params = new URLSearchParams({
+        target: "title",
+        query,
+        size: 15 // 원하는 개수만큼 넉넉히 받아옴
+    });
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: { Authorization: "KakaoAK e7d46386f29140ff8e68d2efe5d8b802" }
+    });
+
+    if (!response.ok) throw new Error(`HTTP 오류: ${response.status}`);
+    return response.json();
+}
+
+async function pickBooksInit() {
+    try {
+        const data = await fetchBooks("화제의 책"); // 원하는 검색어로 변경
+        const books = data.documents;
+
+        const wrapper = document.querySelector('.mySwiperBooks .swiper-wrapper');
+
+        const perPage = 3; // 한 슬라이드(페이지)당 책 3개
+        const pageCount = Math.ceil(books.length / perPage);
+        let slidesHtml = '';
+
+        for (let p = 0; p < pageCount; p++) {
+            const pageBooks = books.slice(p * perPage, p * perPage + perPage);
+
+                const booksHtml = pageBooks.map(doc => `
+                    <div class="pick-book">
+                        <img src="${doc.thumbnail}" alt="${doc.title}">
+                        <p class="pick-book-title">${doc.title}</p>
+                        <p class="pick-book-author">${doc.authors.join(', ')} | ${doc.publisher}</p>
+                        <p class="pick-book-price">${Math.round(doc.price).toLocaleString()}원</p>
+                    </div>
+                `).join('');
+
+            slidesHtml += `
+                <div class="swiper-slide">
+                    <div class="pick-books">${booksHtml}</div>
+                </div>
+            `;
+        }
+
+        wrapper.innerHTML = slidesHtml;
+
+        new Swiper('.mySwiperBooks', {
+            loop: true,
+            pagination: {
+                el: '.books-pagination',
+                type: 'fraction', // "1 / 5" 형태로 표시
+            },
+            navigation: {
+                nextEl: '.mySwiperBooks .swiper-button-next',
+                prevEl: '.mySwiperBooks .swiper-button-prev',
+            },
+        });
+
+    } catch (error) {
+        console.error('에러 발생:', error);
+    }
+}
+
+pickBooksInit();

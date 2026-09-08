@@ -100,51 +100,101 @@ async function fetchBooks(query) {
 
 async function pickBooksInit() {
     try {
-        const data = await fetchBooks("화제의 책"); // 원하는 검색어로 변경
-        const books = data.documents;
-
-        const wrapper = document.querySelector('.mySwiperBooks .swiper-wrapper');
-
-        const perPage = 3; // 한 슬라이드(페이지)당 책 3개
-        const pageCount = Math.ceil(books.length / perPage);
-        let slidesHtml = '';
-
-        for (let p = 0; p < pageCount; p++) {
-            const pageBooks = books.slice(p * perPage, p * perPage + perPage);
-
-                const booksHtml = pageBooks.map(doc => `
-                    <div class="pick-book">
-                        <img src="${doc.thumbnail}" alt="${doc.title}">
-                        <p class="pick-book-title">${doc.title}</p>
-                        <p class="pick-book-author">${doc.authors.join(', ')} | ${doc.publisher}</p>
-                        <p class="pick-book-price">${Math.round(doc.price).toLocaleString()}원</p>
-                    </div>
-                `).join('');
-
-            slidesHtml += `
-                <div class="swiper-slide">
-                    <div class="pick-books">${booksHtml}</div>
-                </div>
-            `;
-        }
-
-        wrapper.innerHTML = slidesHtml;
-
-        new Swiper('.mySwiperBooks', {
-            loop: true,
-            pagination: {
-                el: '.books-pagination',
-                type: 'fraction', // "1 / 5" 형태로 표시
-            },
-            navigation: {
-                nextEl: '.mySwiperBooks .swiper-button-next',
-                prevEl: '.mySwiperBooks .swiper-button-prev',
-            },
-        });
-
+        const data = await fetchBooks("화제의 책");
+        renderBooksSwiper(data.documents, '.mySwiperBooks', '.books-pagination');
     } catch (error) {
-        console.error('에러 발생:', error);
+        console.error('도서 에러 발생:', error);
     }
 }
 
+async function pickretroInit() {
+    try {
+        const data = await fetchBooks("중고");
+        renderBooksSwiper(data.documents, '.mySwiperretro', '.retro-pagination');
+    } catch (error) {
+        console.error('중고샵 에러 발생:', error);
+    }
+}
+
+async function pickebookInit() {
+    try {
+        const data = await fetchBooks("eBook 베스트");
+        renderBooksSwiper(data.documents, '.mySwiperebook', '.ebook-pagination');
+    } catch (error) {
+        console.error('eBook 에러 발생:', error);
+    }
+}
+
+async function pickcdlpInit() {
+    try {
+        const data = await fetchBooks("CD");
+        renderBooksSwiper(data.documents, '.mySwipercdlp', '.cdlp-pagination');
+    } catch (error) {
+        console.error('CD/LP 에러 발생:', error);
+    }
+}
+
+async function pickdvdbdInit() {
+    try {
+        const data = await fetchBooks("DVD");
+        renderBooksSwiper(data.documents, '.mySwiperdvdbd', '.dvdbd-pagination');
+    } catch (error) {
+        console.error('DVD/BD 에러 발생:', error);
+    }
+}
+
+async function pickticketInit() {
+    try {
+        const data = await fetchBooks("티켓");
+        renderBooksSwiper(data.documents, '.mySwiperticket', '.ticket-pagination');
+    } catch (error) {
+        console.error('티켓 에러 발생:', error);
+    }
+}
+
+function renderBooksSwiper(books, swiperSelector, paginationSelector) {
+    const wrapper = document.querySelector(`${swiperSelector} .swiper-wrapper`);
+
+    const perPage = 3;
+    const pageCount = Math.ceil(books.length / perPage);
+    let slidesHtml = '';
+
+    for (let p = 0; p < pageCount; p++) {
+        const pageBooks = books.slice(p * perPage, p * perPage + perPage);
+        const booksHtml = pageBooks.map(doc => `
+            <div class="pick-book">
+                <img src="${doc.thumbnail}" alt="${doc.title}">
+                <p class="pick-book-title">${doc.title}</p>
+                <p class="pick-book-author">${doc.authors.join(', ')} | ${doc.publisher}</p>
+                <p class="pick-book-price">${Math.round(doc.price).toLocaleString()}원</p>
+            </div>
+        `).join('');
+
+        slidesHtml += `
+            <div class="swiper-slide">
+                <div class="pick-books">${booksHtml}</div>
+            </div>
+        `;
+    }
+
+    wrapper.innerHTML = slidesHtml;
+
+    new Swiper(swiperSelector, {
+        loop: true,
+        pagination: {
+            el: document.querySelector(paginationSelector),
+            type: 'fraction',
+        },
+        navigation: {
+            nextEl: `${swiperSelector} .swiper-button-next`,
+            prevEl: `${swiperSelector} .swiper-button-prev`,
+        },
+    });
+}
+
 pickBooksInit();
+pickretroInit();
+pickebookInit();
+pickcdlpInit();
+pickdvdbdInit();
+pickticketInit();

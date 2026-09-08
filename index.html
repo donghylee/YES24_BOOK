@@ -584,64 +584,66 @@
   <!-- 1. 상단 탭 -->
   <ul class="pick-tabs">
     <li class="active">
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="book">
         <span class="icon"><img src="./img/1.png" alt="도서"></span>
         <span class="text">도서</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="retro">
         <span class="icon"><img src="./img/2.png" alt="중고샵"></span>
         <span class="text">중고샵</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="ebook">
         <span class="icon"><img src="./img/3.png" alt="eBook"></span>
         <span class="text">eBook</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="cdlp">
         <span class="icon"><img src="./img/5.png" alt="CD/LP"></span>
         <span class="text">CD/LP</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="dvdbd">
         <span class="icon"><img src="./img/6.png" alt="DVD/BD"></span>
         <span class="text">DVD/BD</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="gift">
         <span class="icon"><img src="./img/4.png" alt="문구/GIFT"></span>
         <span class="text">문구/GIFT</span>
       </a>
     </li>
     <li>
-      <a href="#" class="tabs_r">
+      <a href="#" class="tabs_r" data-tab="ticket">
         <span class="icon"><img src="./img/7.png" alt="티켓"></span>
         <span class="text">티켓</span>
       </a>
     </li>
   </ul>
 
+
+
+  <!-- book 탭 구간 -->
+<div class="pick-books-wrap pick-content-wrap tab-panel active" data-panel="book">
   <!-- 2. Pick 타이틀 줄 -->
-<div class="pick-header">
-  <strong class="pick-title">예스's Pick</strong>
+  <div class="pick-header">
+    <strong class="pick-title">예스's Pick</strong>
 
-  <div class="pick-subnav">
-    <a href="#" class="on">화제의 책</a>
-    <a href="#">외국도서</a>
-    <a href="#">세트도서</a>      
+    <div class="pick-subnav">
+      <a href="#" class="on">화제의 책</a>
+      <a>|</a>
+      <a href="#">외국도서</a>
+      <a>|</a>
+      <a href="#">세트도서</a>      
+    </div>
+    <div class="swiper-pagination books-pagination"></div>
   </div>
-  <div class="swiper-pagination books-pagination"></div>
-</div>
-
-  <!-- 3. 책 3개 그리드 -->
-<div class="pick-books-wrap">
-
   <div class="swiper mySwiperBooks">
     <div class="swiper-wrapper">   
         <div class="swiper-slide">
@@ -658,21 +660,335 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-
-</div>
-  <!-- 4. 하단 배너 줄 -->
+    <!-- 4. 하단 배너 줄 -->
   <div class="pick-banner">
     <div class="pick-banner-text">
-      <strong>브런치북 수상작 : 새로운 작가의 탄생</strong>
-      <p>2015년부터 우수한 작품들을 출간해온 '브런치북 출판 프로젝트'. 올해 대상 수상작을 만나보세요!</p>
+      <a href="#"><span class="pick-banner-text_sp">아동문학의 노벨상, 뉴베리 수상작</span></a>
+      <a href="#"><p class="pick-banner-text_p">2026년 새롭게 선정된 작품부터 오래도록 사랑받아 온 역대 수상작까지, 뉴베리가 선택한 빛나는 작품들을 한자리에서 만나 보세요!</p></a>
     </div>
     <div class="pick-banner-thumbs">
-      <div class="thumb"><img src="t1.jpg"><span>야수의 산</span></div>
-      <div class="thumb"><img src="t2.jpg"><span>나이 60, 생판 남들과 산...</span></div>
-      <div class="thumb"><img src="t3.jpg"><span>딱 두 시간만 일할게요</span></div>
-      <div class="thumb"><img src="t4.jpg"><span>꼭 무연고 처리해주세요</span></div>
+      <a href="#"><div class="thumb"><img src="./img/M1.jpg"><span>모두가 눈부신 파랑</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m2.jpg"><span>죽은나무숲의 죽다 만...</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m3.jpg"><span>레몬나무의 바다</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m4.jpg"><span>사금파리 한 조각1</span></div></a>
     </div>
   </div>
+</div>
+
+<!-- 중고샵 탭 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-retro-wrap pick-content-wrap tab-panel" data-panel="retro">
+  <!-- 2. Pick 타이틀 줄 -->
+  <div class="pick-header">
+    <strong class="pick-title">금주의 중고</strong>
+
+    <div class="pick-subnav">
+      <a href="#" class="on">도서</a>
+      <a>|</a>
+      <a href="#">음반&DVD</a>
+      <a>|</a>
+      <a href="#">전집</a>      
+    </div>
+    <div class="swiper-pagination retro-pagination"></div>
+  </div>
+  <div class="swiper mySwiperretro">
+    <div class="swiper-wrapper">   
+        <div class="swiper-slide">
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+        </div>                                
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-banner-r">
+    <div class="pick-banner-retro">
+      <div class="retro-text">
+        <a href="#">
+          <span class="pick-banner-retro_sp">금주의 슈퍼특가</span>
+        </a>
+        <a>
+          <p class="pick-banner-retro_p">이번 한주만 슈퍼 특가!</p>
+        </a>
+      </div>
+      <div class="retro-books">
+        <div class="retro-img">
+          <a href="#">
+            <img src="./img/M.jpg">
+            <span class="retro-img-sp">여름의 선</span>
+          </a>          
+        </div>
+        <div class="retro-img">
+          <a href="#" >
+            <img src="./img/M (1).jpg">
+            <span class="retro-img-sp">아웃 오브 더 트랙</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="pick-banner-mretro">
+      <div class="mretro-img">
+          <a href="#">
+            <img src="./img/bn_120x158.jpg">
+          </a>
+      </div>
+    </div>
+    <div class="pick-banner-rretro">
+      <div class="rretro-img">
+          <a href="#">
+            <img src="./img/bn_280x158.jpg">
+          </a>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<!-- e-book 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-ebook-wrap pick-content-wrap tab-panel" data-panel="ebook">
+  <!-- 2. Pick 타이틀 줄 -->
+  <div class="pick-header">
+    <strong class="pick-title">화제의 신간 eBook</strong>
+
+    <div class="pick-subnav">
+      <a href="#" class="on">소설/에세이</a>
+      <a>|</a>
+      <a href="#">인문/예술/과학</a>
+      <a>|</a>
+      <a href="#">경제경영/자기계발</a>      
+      <a>|</a>
+      <a href="#">외국어/IT</a>      
+      <a>|</a>
+      <a href="#">가정/실용</a>      
+    </div>
+    <div class="swiper-pagination ebook-pagination"></div>
+  </div>
+  <div class="swiper mySwiperebook">
+    <div class="swiper-wrapper">   
+        <div class="swiper-slide">
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+        </div>                                
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-mix-wrap">
+    <div class="pick-mix-inner">
+
+      <!-- 왼쪽: 탭 3개 (세로) -->
+      <div class="mix-tabs">
+        <a href="#" class="mix-tab">
+          <span>오디오북</span>
+          <i class="arrow">&gt;</i>
+        </a>
+        <a href="#" class="mix-tab">
+          <span>이주의 eBook</span>
+        </a>
+        <a href="#" class="mix-tab">
+          <span>Back To Hogwarts!</span>
+        </a>
+      </div>
+
+      <!-- 오른쪽: 책 3개 (가로) -->
+      <div class="mix-books">
+        <a href="#" class="mix-book">
+          <img src="./img/mix1.jpg" alt="완벽한 불량품">
+          <span class="mix-book-title">[단독 할인] [90일 대여] 완벽한 불량품</span>
+          <p class="mix-book-price">13,500원</p>
+        </a>
+        <a href="#" class="mix-book">
+          <img src="./img/mix2.jpg" alt="묵호의 꽃 오디오북">
+          <span class="mix-book-title">[대여] 묵호의 꽃 오디오북</span>
+          <p class="mix-book-price">12,500원</p>
+        </a>
+        <a href="#" class="mix-book">
+          <img src="./img/mix3.jpg" alt="식물은 어떻게 느끼고 행동하고 기억하는가">
+          <span class="mix-book-title">식물은 어떻게 느끼고 행동하고 기억하는가</span>
+          <p class="mix-book-price">28,500원</p>
+        </a>
+      </div>
+
+    </div>
+    <div class="pick-mix-inner2">
+      <span>강력추천 eBook</span>
+      <a href="#"><img src="./img/M (2).jpg"></a>
+      <span>투명한 나선</span>
+      <span>15,400원</span>
+      <p>그가 남기고 간 대표 시리즈, 갈릴레오 최신작</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- CD/LP 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-cdlp-wrap pick-content-wrap tab-panel" data-panel="cdlp">
+  <!-- 2. Pick 타이틀 줄 -->
+  <div class="pick-header">
+    <strong class="pick-title">화제의 CD/LP</strong>
+
+    <div class="pick-subnav">
+      <!-- <a href="#" class="on">화제의 책</a>
+      <a>|</a>
+      <a href="#">외국도서</a>
+      <a>|</a>
+      <a href="#">세트도서</a>       -->
+    </div>
+    <div class="swiper-pagination cdlp-pagination"></div>
+  </div>
+  <div class="swiper mySwipercdlp">
+    <div class="swiper-wrapper">   
+        <div class="swiper-slide">
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+        </div>                                
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-banner">
+    <div class="pick-banner-text">
+      <a href="#"><span class="pick-banner-text_sp">아동문학의 노벨상, 뉴베리 수상작</span></a>
+      <a href="#"><p class="pick-banner-text_p">2026년 새롭게 선정된 작품부터 오래도록 사랑받아 온 역대 수상작까지, 뉴베리가 선택한 빛나는 작품들을 한자리에서 만나 보세요.!</p></a>
+    </div>
+    <div class="pick-banner-thumbs">
+      <a href="#"><div class="thumb"><img src="./img/M1.jpg"><span>모두가 눈부신 파랑</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m2.jpg"><span>죽은나무숲의 죽다 만...</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m3.jpg"><span>레몬나무의 바다</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m4.jpg"><span>사금파리 한 조각1</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- DVD/BD 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-dvdbd-wrap pick-content-wrap tab-panel" data-panel="dvdbd">
+  <!-- 2. Pick 타이틀 줄 -->
+  <div class="pick-header">
+    <strong class="pick-title">예약 DVD/BD &gt;</strong>
+
+    <div class="swiper-pagination dvdbd-pagination"></div>
+  </div>
+  <div class="swiper mySwiperdvdbd">
+    <div class="swiper-wrapper">   
+        <div class="swiper-slide">
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+        </div>                                
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-banner">
+    <div class="pick-banner-text">
+      <a href="#"><span class="pick-banner-text_sp">아동문학의 노벨상, 뉴베리 수상작</span></a>
+      <a href="#"><p class="pick-banner-text_p">2026년 새롭게 선정된 작품부터 오래도록 사랑받아 온 역대 수상작까지, 뉴베리가 선택한 빛나는 작품들을 한자리에서 만나 보세요.!</p></a>
+    </div>
+    <div class="pick-banner-thumbs">
+      <a href="#"><div class="thumb"><img src="./img/M1.jpg"><span>모두가 눈부신 파랑</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m2.jpg"><span>죽은나무숲의 죽다 만...</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m3.jpg"><span>레몬나무의 바다</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m4.jpg"><span>사금파리 한 조각1</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- GIFT 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-gift-wrap pick-content-wrap tab-panel" data-panel="gift">
+  <!-- 2. Pick 타이틀 줄 -->
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-banner">
+    <div class="pick-banner-text">
+      <a href="#"><span class="pick-banner-text_sp">아동문학의 노벨상, 뉴베리 수상작</span></a>
+      <a href="#"><p class="pick-banner-text_p">2026년 새롭게 선정된 작품부터 오래도록 사랑받아 온 역대 수상작까지, 뉴베리가 선택한 빛나는 작품들을 한자리에서 만나 보세요.!</p></a>
+    </div>
+    <div class="pick-banner-thumbs">
+      <a href="#"><div class="thumb"><img src="./img/M1.jpg"><span>모두가 눈부신 파랑</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m2.jpg"><span>죽은나무숲의 죽다 만...</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m3.jpg"><span>레몬나무의 바다</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m4.jpg"><span>사금파리 한 조각1</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- 티켓 구간 -->
+   <!-- book 탭 부분 -->
+<div class="pick-ticket-wrap pick-content-wrap tab-panel" data-panel="ticket">
+  <!-- 2. Pick 타이틀 줄 -->
+  <div class="pick-header">
+    <strong class="pick-title">TICKET SPOT</strong>
+    <div class="swiper-pagination ticket-pagination"></div>
+  </div>
+  <div class="swiper mySwiperticket">
+    <div class="swiper-wrapper">   
+        <div class="swiper-slide">
+          <div class="pick-books">
+            <div class="pick-book">                           
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+            <div class="pick-book"><!-- 동일 구조 반복 -->
+            </div>
+          </div>
+        </div>                                
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <!-- 4. 하단 배너 줄 -->
+  <div class="pick-banner">
+    <div class="pick-banner-text">
+      <a href="#"><span class="pick-banner-text_sp">아동문학의 노벨상, 뉴베리 수상작</span></a>
+      <a href="#"><p class="pick-banner-text_p">2026년 새롭게 선정된 작품부터 오래도록 사랑받아 온 역대 수상작까지, 뉴베리가 선택한 빛나는 작품들을 한자리에서 만나 보세요.!</p></a>
+    </div>
+    <div class="pick-banner-thumbs">
+      <a href="#"><div class="thumb"><img src="./img/M1.jpg"><span>모두가 눈부신 파랑</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m2.jpg"><span>죽은나무숲의 죽다 만...</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m3.jpg"><span>레몬나무의 바다</span></div></a>
+      <a href="#"><div class="thumb"><img src="./img/m4.jpg"><span>사금파리 한 조각1</span></div></a>
+    </div>
+  </div>
+</div>
+
 
 </section>
 </section>
@@ -796,7 +1112,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
   <script src="./js/swiper.js"></script>
-
+  <script src="./js/tab.js"></script>
   <script src="./js/book.js"></script>
   <script src="./js/book1.js"></script>
 </body>

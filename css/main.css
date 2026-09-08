@@ -1152,19 +1152,52 @@ li a {
     height: 1px;
     background-color: #ffffff; /* 페이지(또는 부모) 배경색과 동일하게 */
 }
-
-
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+.pick-subnav{
+    font-size: 12px;
+}
 /* 2. Pick 헤더 줄 */
-.pick-books-wrap {
+.pick-content-wrap {
     width: 1200px;
     position: relative;
 }
 
-.mySwiperBooks {
+.pick-content-wrap .swiper {
     width: 100%;
 }
+/* ///////////////////////////////////////////////////////////////////////// */
+.pick-books-wrap,
+.pick-retro-wrap,
+.pick-ebook-wrap,
+.pick-cdlp-wrap,
+.pick-dvdbd-wrap,
+.pick-ticket-wrap {
+    width: 1200px;
+    position: relative;
+}
 
-.pick-header .books-pagination {
+.mySwiperBooks,
+.mySwiperretro,
+.mySwiperebook,
+.mySwipercdlp,
+.mySwiperdvdbd,
+.mySwiperticket {
+    width: 100%;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+
+
+.ticket-pagination,
+.dvdbd-pagination,
+.cdlp-pagination,
+.ebook-pagination,
+.retro-pagination,
+.books-pagination{
     position: absolute;
     top: 50%;
     right: 20px;
@@ -1255,22 +1288,176 @@ li a {
 /* 4. 하단 배너 */
 .pick-banner {
     width: 1200px;
-    height: 215px;
+    height: 260px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
-.pick-banner-thumbs {
+.pick-banner-text{
+    width: 328px;
+    height: 98px;
+    margin-left: 50px;
+}
+/* retro 구간 하단 배너 //////////////////////////////////////////////////////////*//* 199, 399로 해서 만들면 됨.*/
+
+.pick-banner-r {
+    width: 1200px;
+    height: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    /* padding-top: 20px; */
+}
+
+
+.pick-banner-retro {
+    width: 599px;
+    height: 260px;
+    margin-left: 50px;
+    margin-top: 70px;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+}
+.pick-banner-mretro {
+    width: 199px;
+    height: 260px;
+    border-left: 1px solid #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mretro-img{
+    width: 170px;
+    height: 200px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.mretro-img a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mretro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pick-banner-rretro {
+    width: 399px;
+    height: 260px;
+    /* margin-left: 50px; */
+    /* margin-top: 70px; */
+    border-left: 1px solid #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rretro-img{
+    width: 170px;
+    height: 200px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.rretro-img a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rretro-img img {
+    width: 300px;
+    height: 100%;
+    object-fit: contain;
+}
+.retro-text {
+    width: 600px;
+    margin-left: -10px;
+    align-self: flex-start;
+}
+.pick-banner-retro_sp {
+    font-size: 17px;
+    font-weight: bold;
+}
+.pick-banner-retro_p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #aaaaaa;
+}
+.retro-books {
+    margin-left: 90px;
     display: flex;
     gap: 15px;
 }
+.retro-img {
+    width: 140px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.retro-img img {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+    display: flex;
+}
+.retro-img-sp {
+    display: flex;
+    margin-top: 12px;
+    font-size: 13px;
+    justify-content: center;
+}
+.retro-img-sp:hover{
+    text-decoration: underline;
+}
+
+.pick-banner-retro_sp:hover{
+    text-decoration: underline;
+}
+/* //////////////////////////////////////////////////////////////////////////////// */
+.pick-banner-text_sp{
+    font-size: 17px;
+    font-weight: bold;
+}
+.pick-banner-text_p{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #aaaaaa;
+}
+.pick-banner-text_sp:hover{
+    text-decoration: underline;
+}
+.pick-banner-text_p:hover{
+    text-decoration: underline;
+}
+.pick-banner-thumbs {
+    width: 714px;
+    height: 158px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;    
+}
+
 .pick-banner-thumbs .thumb {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     font-size: 12px;
+}
+.pick-banner-thumbs .thumb span{
+    margin-top: 10px;
+}
+.pick-banner-thumbs .thumb span:hover{
+    text-decoration: underline;
 }
 .pick-banner-thumbs img {
     width: 80px;
@@ -1278,6 +1465,128 @@ li a {
     margin-bottom: 5px;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+.pick-mix-wrap {
+    width: 1200px;
+    height: 177px;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #dcdcdc
+    
+}
+
+/* 자식 800x240 */
+.pick-mix-inner {
+    width: 800px;
+    height: 177px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+/* 탭 3개: 세로 나열, 각 190x80 */
+.mix-tabs {
+    margin-top: 50px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    height: 150px; /* 80 x 3 */
+    border: 1px solid #dcdcdc;
+    background-color: #f1f1f1;
+}
+
+.mix-tab {
+    width: 190px;
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid #dcdcdc;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mix-tab:last-child {
+    border-bottom: none;
+}
+
+.mix-tab .arrow {
+    font-style: normal;
+    color: #999;
+}
+
+/* 책 3개: 가로 나열, 각 160x240 */
+.mix-books {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; /* 가운데 정렬. space-around/between 등으로 바꿔도 됨 */
+    align-items: flex-start;
+    flex: 1; /* 남은 공간(800-190) 채움 */
+    height: 165px;
+}
+
+.mix-book {
+    width: 160px;
+    height: 177px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    padding: 0 10px;
+}
+
+.mix-book img {
+    width: 68px;
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.mix-book-title {
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.mix-book-price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px; /* 가격을 하단에 고정하고 싶으면 */
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+.pick-mix-inner2 {
+    width: 400px;
+    height: 177px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #dcdcdc;
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
 
 /* 여섯번째 섹션 */
 .six{
@@ -1374,7 +1683,7 @@ li a {
 
 
 
-
+.pick-books-wrap,
 .mySwiper2,
 .st2,
 .middle-t,
@@ -1383,6 +1692,8 @@ li a {
     --swiper-navigation-color: #ffffff;
 }
 
+.pick-books-wrap .swiper-button-next,
+.pick-books-wrap .swiper-button-prev,
 .mySwiper2 .swiper-button-next,
 .mySwiper2 .swiper-button-prev,
 .st2 .swiper-button-next,
@@ -1403,6 +1714,7 @@ li a {
     transition: opacity 0.25s ease, background-color 0.2s ease;
     z-index: 10;
 }
+
 .middle-t .swiper-button-next,
 .middle-t .swiper-button-prev,
 .st2 .swiper-button-next,
@@ -1410,6 +1722,8 @@ li a {
     margin-top: -5px;
 }
 
+.pick-books-wrap .swiper-button-next::after,
+.pick-books-wrap .swiper-button-prev::after,
 .mySwiper2 .swiper-button-next::after,
 .mySwiper2 .swiper-button-prev::after,
 .st2 .swiper-button-next::after,
@@ -1424,6 +1738,8 @@ li a {
     color: #ffffff;
 }
 
+.pick-books-wrap:hover .swiper-button-next,
+.pick-books-wrap:hover .swiper-button-prev,
 .mySwiper2:hover .swiper-button-next,
 .mySwiper2:hover .swiper-button-prev,
 .st2:hover .swiper-button-next,
@@ -1438,6 +1754,8 @@ li a {
     visibility: visible;
 }
 
+.pick-books-wrap .swiper-button-next:hover,
+.pick-books-wrap .swiper-button-prev:hover,
 .mySwiper2 .swiper-button-next:hover,
 .mySwiper2 .swiper-button-prev:hover,
 .st2 .swiper-button-next:hover,

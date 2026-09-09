@@ -108,3 +108,42 @@ function toggleDropdown(btn) {
     arrow.textContent = list.classList.contains('active') ? '▲' : '▼';
   }
 }
+
+
+// 7번째 섹션 스와이프
+
+var swiperLeft = new Swiper('.seven-left .mySwiperLeft', {
+  loop: true,
+  pagination: {
+    el: '.seven-left .swiper-pagination',
+    type: 'fraction', // 필요 없으면 이 줄 삭제 (기본은 점 형태)
+  },
+  navigation: {
+    nextEl: '.seven-left .swiper-button-next',
+    prevEl: '.seven-left .swiper-button-prev',
+  },
+});
+
+var swiperTop = new Swiper('.seven-middle-top .mySwiperTop', {
+  loop: true,
+  pagination: {
+    el: '.seven-middle-top .swiper-pagination',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.seven-middle-top .swiper-button-next',
+    prevEl: '.seven-middle-top .swiper-button-prev',
+  },
+});
+
+var swiperBottom = new Swiper('.seven-middle-bottom .mySwiperBottom', {
+  loop: true,
+  pagination: {
+    el: '.seven-middle-bottom .swiper-pagination',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.seven-middle-bottom .swiper-button-next',
+    prevEl: '.seven-middle-bottom .swiper-button-prev',
+  },
+});

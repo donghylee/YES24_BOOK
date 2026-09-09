@@ -39,3 +39,27 @@ tabs.forEach(tab => {
     document.querySelector(`.tab-panel[data-panel="${target}"]`).classList.add('active');
   });
 });
+
+
+
+// 중간 탭 구간 (ebook 부터)
+
+const mixtabs = document.querySelectorAll('.mix-tab');
+const mixpanels = document.querySelectorAll('.mix-books');
+const wrap = document.querySelector('.mix-books-wrap');
+
+mixtabs.forEach(tab => {
+  tab.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    mixtabs.forEach(t => t.classList.remove('mix-tab--active'));
+    tab.classList.add('mix-tab--active');
+
+    wrap.style.backgroundColor = tab.dataset.color;
+
+    const targetName = tab.dataset.tab;
+    mixpanels.forEach(panel => {
+      panel.classList.toggle('is-active', panel.dataset.panel === targetName);
+    });
+  });
+});

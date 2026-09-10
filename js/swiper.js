@@ -147,3 +147,19 @@ var swiperBottom = new Swiper('.seven-middle-bottom .mySwiperBottom', {
     prevEl: '.seven-middle-bottom .swiper-button-prev',
   },
 });
+
+
+const swiperRight = new Swiper('.mySwiperRight', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  pagination: {
+    el: '.mySwiperRight .swiper-pagination',
+    type: 'fraction',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.mySwiperRight .swiper-button-next',
+    prevEl: '.mySwiperRight .swiper-button-prev',
+  },
+});

@@ -40,7 +40,6 @@
   border-right: 1px solid #dcdcdc;
   border-bottom: 1px solid #dcdcdc;
   align-content: center;
-  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -68,9 +67,9 @@
 
 .menu-list {
     width: 101px;
-    /* height: ; */
     list-style: none;
     margin: 0;
+    margin-top: 5px;
     padding: 0;
   }
 .yes {
@@ -82,7 +81,6 @@
     width: 101px;
     margin: 0;
 }
-
 .yes:hover {
     background-color: #0056b3;
     color: #ffffff;
@@ -149,6 +147,7 @@
     background: #f9f9f9;
     align-items: center;
     color: black;
+    cursor: pointer;
 }
 
 .swiper-slide img {
@@ -770,14 +769,14 @@ li a {
     justify-content: center;
 }
 .tore .top-right .top_p {
-    width: 237px;
+    width: 230px;
     height: 68px;
     align-content: center;
     font-weight: bold;
     text-indent: 20px;
 }
 .tore .top-right .top-right_1 {
-    width: 237px;
+    width: 230px;
     height: 321px;
     display: flex;
     flex-direction: column;
@@ -953,32 +952,32 @@ li a {
     margin: 0 auto;
     justify-content: center;
 }
-.fore .fo-right .fo_p{
-    width: 237px;
-    height: 68px;
-    align-content: center;
-    font-weight: bold;
-    text-indent: 20px;
-}
-.fore .fo-right .fo-right_1{
-    width: 237px;
-    height: 321px;
-    display: flex;
-    flex-direction: column; 
-}
 .fore .fo-right .fo-right_2{
-    width: 237px;
-    height: 160px;
-    margin-top: 10px;
+    width: 242px;
+    height: 371px;
+    display: flex;
 }
 .fore .fo-right .fo-right_2 img{
-    width: 80%;    /* 부모의 80% 크기 */
-    height: auto;
-    display: block;
-    margin: 0 auto;  /* 가운데 정렬하고 싶으면 */
+    width: 100%;
+    height: 100%;
 }
-.fore .fo-right .fo-right_2:not(:last-child) {
-    border-bottom: 1px solid #dcdcdc;
+.fo-right .swiper{
+    width: 100%;
+    height: 100%;
+}
+.fo-right .swiper-pagination {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    left: auto;        
+    bottom: auto;      
+    width: auto;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+}
+.fo-right .swiper {
+    flex: 1;
 }
 /* 다섯번째 섹션 */
 .pick-section {
@@ -1007,7 +1006,7 @@ li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 6px; /* 아이콘과 글자 사이 간격 */
+    margin-bottom: 6px; 
 }
 .pick-tabs li {
     display: flex;
@@ -1683,8 +1682,12 @@ li a {
     width: 1200px;
     height: 617px;
     margin: 20px auto;
+    background-color: #ffffff;
     box-shadow: 0 0 0 1px #dcdcdc;
     display: flex;
+}
+.seven .swiper-slide{
+    background-color: #ffffff;
 }
 .seven-left .swiper,
 .seven-middle-top .swiper,
@@ -1697,6 +1700,16 @@ li a {
     height: 120px;
     object-fit: cover;
     border-radius: 4px;
+}
+.seven-left .swiper-pagination {
+    position: static; /* Swiper 기본은 absolute라서, 헤더 안에 넣으려면 static으로 */
+    width: auto;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+}
+.seven-left .swiper {
+    flex: 1;
 }
 /* middle-top / middle-bottom 스와이프 이미지는 여기서 각자 관리 */
 .seven-middle-top .swiper-slide img,
@@ -1726,17 +1739,8 @@ li a {
     font-weight: 700;
     margin: 0;
 }
-.seven-left .swiper-pagination {
-    position: static; /* Swiper 기본은 absolute라서, 헤더 안에 넣으려면 static으로 */
-    width: auto;
-    font-size: 13px;
-    color: #999;
-    font-weight: bold;
-}
-.seven-left .swiper {
-    flex: 1;
-}
-/* 상단: 책 썸네일 + 정보 (가로 배치) */
+
+
 .card-slide-top {
     display: flex;
     gap: 12px;
@@ -1834,7 +1838,8 @@ li a {
     position: static;
     width: auto;
     font-size: 13px;
-    color: #999;
+    color: #000000;
+    font-weight: bold;
 }
 
 /* 스와이프 영역 */
@@ -1852,13 +1857,11 @@ li a {
     gap: 20px;
 }
 .mtop-card {
-    
-    flex: 1; /* 3개가 균등하게 공간 나눠 가짐 */
+    flex: 1; 
     text-decoration: none;
     color: inherit;
 }
 .mtop-card img {
-
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -1940,7 +1943,8 @@ li a {
     position: static;
     width: auto;
     font-size: 13px;
-    color: #999;
+    color: #000000;
+    font-weight: bold;
 }
 
 .seven-middle-bottom .swiper {
@@ -1956,13 +1960,11 @@ li a {
     gap: 20px;
 }
 .mbottom-card {
-    
     flex: 1; /* 3개가 균등하게 공간 나눠 가짐 */
     text-decoration: none;
     color: inherit;
 }
 .mbottom-card img {
-
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -1991,7 +1993,7 @@ li a {
     height: 40px;
     margin:  -20px;
     padding: 20px, 30px;
-    top: 0px;
+    top: 8px;
     position: relative;  
     background-color: #dcdcdc;
     display: flex;
@@ -2207,7 +2209,7 @@ li a {
     align-content: center;
 }
 
-
+.fo-right,
 .mySwiperBottom,
 .mySwiperTop,
 .mySwiperLeft,
@@ -2227,7 +2229,8 @@ li a {
 
 
 
-
+.fo-right .swiper-button-next,
+.fo-right .swiper-button-prev,
 .mySwiperBottom .swiper-button-next,
 .mySwiperBottom .swiper-button-prev,
 .mySwiperTop .swiper-button-next,
@@ -2267,6 +2270,8 @@ li a {
     z-index: 10;
 }
 
+.fo-right .swiper-button-next,
+.fo-right .swiper-button-prev,
 .middle-t .swiper-button-next,
 .middle-t .swiper-button-prev,
 .st2 .swiper-button-next,
@@ -2275,7 +2280,8 @@ li a {
 }
 
 
-
+.fo-right .swiper-button-next::after,
+.fo-right .swiper-button-prev::after,
 .mySwiperBottom .swiper-button-next::after,
 .mySwiperBottom .swiper-button-prev::after,
 .mySwiperTop .swiper-button-next::after,
@@ -2310,6 +2316,8 @@ li a {
 
 
 
+.fo-right:hover .swiper-button-next,
+.fo-right:hover .swiper-button-prev,
 .mySwiperBottom:hover .swiper-button-next,
 .mySwiperBottom:hover .swiper-button-prev,
 .mySwiperTop:hover .swiper-button-next,
@@ -2343,6 +2351,9 @@ li a {
 }
 
 
+
+.fo-right .swiper-button-next:hover,
+.fo-right .swiper-button-prev:hover,
 .mySwiperBottom .swiper-button-next:hover,
 .mySwiperBottom .swiper-button-prev:hover,
 .mySwiperTop .swiper-button-next:hover,

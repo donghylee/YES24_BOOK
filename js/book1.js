@@ -55,7 +55,7 @@ async function bookData() {
                     <div class="${textItemClass}">
                         <div class="m-t-text1">${doc.title}</div>
                         <div class="m-t-text5">${doc.author} 저 | ${doc.publisher}</div>
-                        <div class="m-t-text6">${Math.round(doc.price)}원</div>
+                        <div class="m-t-text6">${Math.round(doc.price).toLocaleString()}원</div>
                     </div>
                 `).join('');
 

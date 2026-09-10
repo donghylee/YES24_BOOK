@@ -45,9 +45,14 @@ async function bookData() {
                   <div class="m-t-text3">${doc.contents}</div>
                   
                   <div class="m-t-text5">${doc.author} 저 | ${doc.publisher}</div>
-                  <div class="m-t-text6"><span class="price-num">${Math.round(doc.price*0.9)}원</span> (10% 할인) 🅿️ ${Math.round(doc.price*0.1)}</div>
+                  <div class="m-t-text6">
+                  <span class="price-num">${Math.round(doc.price * 0.9).toLocaleString()}원</span>
+                    (10% 할인) 🅿️ ${Math.round(doc.price * 0.1).toLocaleString()}</div>
                 </div>
-                        `
+                        `;
+                    box.addEventListener('click', function () {
+                    window.location.href = './sub.html';
+                });
             });
 
             // 첫번째 섹션 두번째 스와이프
